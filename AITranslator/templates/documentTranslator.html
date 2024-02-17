@@ -1,0 +1,175 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="{% static 'assets/favicon.ico' %}"
+    />
+    <title>Mk AI Translator</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  </head>
+
+  <body style="font-family: Open Sans">
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark" style="background-color: #205cbd">
+      <h2 class="navbar-title">
+        <a class="nav-title-href" href="/">MAKALOT Document Translation</a>
+      </h2>
+    </nav>
+    <!-- Sizebar and Content-->
+    <div class="container" style="max-width: 100%">
+      <!-- Sidebar -->
+      <div class="row justify-content-start">
+        <div class="col-sm-3" style="width: 17%">
+          <nav
+            id="sidebarMenu"
+            class="collapse d-lg-block sidebar collapse bg-white"
+          >
+            <div class="position-sticky">
+              <div class="list-group list-group-flush mx-3 mt-4">
+                <div>
+                  <i class="fas fa-tachometer-alt fa-fw me-3"></i>
+                  <span class="sidebarFont-title">Smart AI</span>
+                </div>
+                <a
+                  href=""
+                  class="list-group-item list-group-item-action py-2 ripple"
+                >
+                  <i class="bi bi-file-earmark-text"></i>
+                  <span class="sidebarFont">Document Translator</span>
+                </a>
+                <a
+                  href="#"
+                  class="list-group-item list-group-item-action py-2 ripple"
+                >
+                  <i class="bi bi-files"></i>
+                  <span class="sidebarFont">Document Recognition</span>
+                </a>
+                <a
+                  href="#"
+                  class="list-group-item list-group-item-action py-2 ripple"
+                >
+                  <i class="bi bi-translate"></i>
+                  <span class="sidebarFont">Translation</span>
+                </a>
+              </div>
+            </div>
+          </nav>
+          <!-- Side Bar -->
+        </div>
+        <div class="col-sm-9">
+          <span class="content-width">
+            <div class="row">
+              <div class="jumbotron">
+                <h1 class="subtitle">
+                  <a href="/" class="subtitle-nav"
+                    >MAKALOT Document Translation</a
+                  >
+                  / Document Translator
+                </h1>
+              </div>
+              <h5 class="subtitle-title">Document Translator</h5>
+              <div>
+                <h5 class="subtitle-input-instruction">
+                  Allowed file types: PDF, Word
+                </h5>
+                <form>
+                  <div>
+                    <input
+                      class="form-control form-control-lg"
+                      id="formFileLg"
+                      type="file"
+                    />
+                    <div class="droplist">
+                      <div class="d-flex align-items-center">
+                        <select
+                          class="form-select droplist"
+                          aria-label="Default select example"
+                        >
+                          <option selected disabled>Choose Language...</option>
+                          <option value="ori-chi">Chinese</option>
+                          <option value="ori-eng">English</option>
+                        </select>
+                        <div class="mx-3">
+                          <i class="bi bi-arrow-right"></i>
+                        </div>
+                        <select
+                          class="form-select droplist"
+                          aria-label="Default select example"
+                        >
+                          <option selected disabled>Choose Language...</option>
+                          <option value="tran-chi">Chinese</option>
+                          <option value="tran-eng">English</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div>
+                      <button
+                        type="submit"
+                        class="btn btn-outline-primary"
+                        style="float: right; margin-top: 1.3%"
+                      >
+                        Translate
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="row">
+              <h5 class="subtitle-sm-title">Translate Result</h5>
+              <div>
+                <div class="form-group">
+                  <div class="col-xs-6">
+                    <textarea
+                      class="form-control"
+                      id="textarea-result"
+                      rows="23"
+                      style="
+                        margin-right: 2%;
+                        width: 100%;
+                        height: 100%;
+                        float: left;
+                      "
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+    <!-- Sidebar -->
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-2.2.4.js"
+    integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"
+  ></script>
+  <script src="{% static 'js/index.js' %}"></script>
+</html>
