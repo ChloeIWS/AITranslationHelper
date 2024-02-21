@@ -1,105 +1,73 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="zh-TW">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="{% static 'assets/favicon.ico' %}"
+    />
     <title>Mk AI Translator</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
-    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
-</head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Tenor Sans"
+      rel="stylesheet"
+    />
+    <link href="{% static 'css/default-style.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/index.css' %}" rel="stylesheet" />
+  </head>
 
-<body style="font-family: Open Sans">
-    <!-- Navbar -->
-    <nav href="/" class="navbar navbar-dark" style="background-color: #205cbd">
-        <h2 class="navbar-title"><a class="nav-title-href" href="">MAKALOT Document Translation</a></h2>
-    </nav>
-    <!-- Sizebar and Content-->
-    <div class="container">
-        <div class="row justify-content-start">
-            <div class="col-sm-3">
-                <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
-                    <div class="position-sticky">
-                        <div class="list-group list-group-flush mx-3 mt-4">
-                            <div>
-                                <i class="fas fa-tachometer-alt fa-fw me-3"></i>
-                                <span class="sidebarFont-title">Smart AI</span>
-                            </div>
-                            <a href="documentTranslator" class="list-group-item list-group-item-action py-2 ripple">
-                                <i class="bi bi-file-earmark-text"></i>
-                                <span class="sidebarFont">Document Translator</span>
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action py-2 ripple">
-                                <i class="bi bi-files"></i>
-                                <span class="sidebarFont">Document Recognition</span>
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action py-2 ripple">
-                                <i class="bi bi-translate"></i>
-                                <span class="sidebarFont">Translation</span>
-                            </a>
-                        </div>
-                    </div>
-                </nav>
-                <!-- Side Bar -->
-            </div>
-            <div class="col-sm-9">
-                <div class="jumbotron">
-                    <h1 class="display-5">
-                        <strong>Welcome to the Makalot Smart AI Translator!</strong>
-                    </h1>
-                    <p class="lead">
-                        <strong>You can translate your document to Chinese/English here.</strong>
-                    </p>
-                    <hr class="my-4"/>
-                    <p class="lead">
-                        <div class="row">
-                            <div class="col-sm-4 card card-custom-body" style="padding: 2%; width: 25rem; margin: 2%">
-                                <img src="{% static 'assets/docTranslator.png' %}" class="card-img-top" alt="">
-                                <div class="card-body">
-                                    <h5 class="card-title card-custom-title"><strong>Document Translator</strong></h5>
-                                    <hr class="my-4" />
-                                    <p class="card-text">You can translate your document to Chinese/English.</p>
-                                    <a href="documentTranslator" class="btn btn-outline-primary card-custom-button btn-block">Document translation</a>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 card card-custom-body" style="padding: 2%; width: 25rem; margin: 2%">
-                                <img src="{% static 'assets/docRecognition.png' %}" class="card-img-top" alt="">
-                                <div class="card-body">
-                                    <h5 class="card-title card-custom-title"><strong>Document Recognition</strong></h5>
-                                    <hr class="my-4" />
-                                    <p class="card-text">You can upload image document and transfer it to words.</p>
-                                    <a href="#" class="btn btn-outline-primary card-custom-button btn-block">Start
-                                        recognition</a>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 card card-custom-body" style="padding: 2%; width: 25rem; margin: 2%">
-                                <img src="{% static 'assets/translate.png' %}" class="card-img-top" alt="" style="height:344px">
-                                <div class="card-body">
-                                    <h5 class="card-title card-custom-title"><strong>Translation</strong></h5>
-                                    <hr class="my-4" />
-                                    <p class="card-text">You can translate any word / sentence / paragraph here.</p>
-                                    <a href="#" class="btn btn-outline-primary card-custom-button btn-block">Start
-                                        translate</a>
-                                </div>
-                            </div>
-                        </div>
-                    </p>
-                </div>
-            </div>
-        </div>
+  <body style="font-family: Tenor Sans">
+    <div class="container-fluid active">
+      <section>
+        <nav class="nav-bar">
+          <a class="nav-title" href="/">GPT Platform</a>
+          <a class="nav-subtitle" href="/" style="margin-left: 25%"
+            >DOCUMENT TRANSLATOR</a
+          >
+          <a class="nav-subtitle" href="/">VOICE</a>
+          <a class="nav-subtitle" href="/">VIDEO</a>
+        </nav>
+        <a href="/">
+          <img src={%static "/assets/homepage_image.svg"%} class="index-img">
+        </a>
+        <img src={%static "/assets/scroll-down-icon.gif"%} class="scroll-down"></img>
+      </section>
     </div>
-    <!-- Sidebar -->
-</body>
-<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    <div class="container-fluid reveal" style="background: linear-gradient(to right, #89CFF0, #1D8EB8)">
+      <section>
+        <div class="cards">
+          <div class="text-card">
+            <a href="/">
+              <img src={%static "assets/documenttrans_icon.svg"%}
+              class="function-img">
+            </a>
+          </div>
+          <a href="/"class="function-title">DOCUMENT TRANSLATOR<a>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-2.2.4.js"
+    integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
-<script src="{% static 'js/index.js' %}"></script>
-
+    crossorigin="anonymous"
+  ></script>
+  <script src="{% static 'js/index.js' %}"></script>
 </html>
